@@ -46,4 +46,8 @@ public class RssService {
         repository.saveAll(newQuotes);
         log.info("Saved " + newQuotes.size() + " quotes");
     }
+
+    public Quote getRandomQuotes() {
+        return repository.findRandomQuote();
+    }
 }

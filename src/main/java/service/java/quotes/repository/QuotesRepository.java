@@ -15,4 +15,10 @@ public interface QuotesRepository extends JpaRepository<Quote, String> {
             nativeQuery = true
     )
     List<Statistic> getStatistics();
+
+    @Query(
+            value = "SELECT * FROM Quote ORDER BY RANDOM() LIMIT 1;",
+            nativeQuery = true
+    )
+    Quote findRandomQuote();
 }
